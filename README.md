@@ -1,2 +1,2 @@
 # trabalho-final-topicos
-O trabalho referente à disciplina de Tópicos Emergentes em Informática pertence aos alunos Mikael Fontoura e Fulano da Silva.
+O trabalho referente à disciplina de Tópicos Emergentes em Informática pertence aos alunos Mikael e Larissa.
