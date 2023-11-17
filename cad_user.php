@@ -1,50 +1,31 @@
-<?php
-if (isset($_POST['acessar']) && !empty($_POST['email']) && !empty($_POST['senha'])) {
-    include_once("conectar.php");
-    $conexao = conectar();
-    session_start();
+<?php 
 
-    $email = mysqli_escape_string($conexao, $_POST['email']);
-    $senha = mysqli_escape_string($conexao, $_POST['senha']);
 
-    $comando = "SELECT * FROM usuario WHERE email = '$email'";
-    $consulta = mysqli_query($conexao, $comando);
-
-    if (mysqli_num_rows($consulta) == 1) {
-        $dados = mysqli_fetch_assoc($consulta);
-        if (password_verify($senha, $dados['senha'])) {
-            $_SESSION['email'] = $email;
-            $_SESSION['id_usuario'] = $dados['id_usuario'];
-            header("Location: central.php");
-        } else {
-            session_destroy();
-        }
-    } else {
-        session_destroy();
-    }
-}
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/pacote.css">
     <link rel="shortcut icon" href="#" type="image/x-icon">
-    <title>Rituais do Café</title>
+    <title>Cadastrar Usuário</title>
 </head>
-
 <body>
-    <?php include_once('cabecalho.php'); ?>
+<?php include_once('cabecalho.php'); ?>
     <main class="container">
         <form method="post" action="">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="email" name="nome" required><br>
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" required><br>
             <label for="senha">Senha:</label><br>
             <input type="password" id="senha" name="senha" required><br>
+            <label for="fone">Telefone:</label><br>
+            <input type="text" id="fone" name="fone" required><br>
             <button type="submit" name="login">Acessar</button>
         </form>
     </main>
@@ -53,5 +34,4 @@ if (isset($_POST['acessar']) && !empty($_POST['email']) && !empty($_POST['senha'
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
 </body>
-
 </html>
