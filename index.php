@@ -18,9 +18,11 @@ if (isset($_POST['acessar']) && !empty($_POST['email']) && !empty($_POST['senha'
             header("Location: central.php");
         } else {
             session_destroy();
+            echo "erro senha";
         }
     } else {
         session_destroy();
+        echo "erro sa";
     }
 }
 ?>
@@ -40,12 +42,13 @@ if (isset($_POST['acessar']) && !empty($_POST['email']) && !empty($_POST['senha'
 <body>
     <?php include_once('cabecalho.php'); ?>
     <main class="container">
-        <form method="post" action="">
+        <form method="post">
             <label for="email">Email:</label><br>
             <input type="email" id="email" name="email" required><br>
             <label for="senha">Senha:</label><br>
             <input type="password" id="senha" name="senha" required><br>
             <button type="submit" name="login">Acessar</button>
+            <p>Não possui conta? <a href="cad_user.php">Cadastre-se</a>
         </form>
     </main>
     <?php include_once('rodape.php'); ?>

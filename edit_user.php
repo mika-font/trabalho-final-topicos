@@ -1,3 +1,16 @@
+<?php 
+include_once("controle.php");
+$id_usuario = $_POST['id_usuario'];
+$sql = "SELECT * FROM usuario WHERE id_usuario = $id_usuario";
+$result = mysqli_query($conexao, $sql);
+if($result == TRUE){
+    $dados = mysqli_fetch_assoc($result);
+} else {
+    echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -8,22 +21,21 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/pacote.css">
     <link rel="shortcut icon" href="#" type="image/x-icon">
-    <title>Cadastrar Usuário</title>
+    <title>Editar Usuário</title>
 </head>
 <body>
 <?php include_once('cabecalho.php'); ?>
     <main class="container">
-        <form method="post" action="processa_usuario.php">
+        <form method="post" action="">
             <label for="nome">Nome:</label><br>
-            <input type="text" id="email" name="nome" required><br>
+            <input type="text" id="email" name="nome" value="<?= $dados['nome']; ?>" required><br>
             <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email" required><br>
+            <input type="email" id="email" name="email" value="<?= $dados['email']; ?>"  required><br>
             <label for="senha">Senha:</label><br>
             <input type="password" id="senha" name="senha" required><br>
             <label for="fone">Telefone:</label><br>
-            <input type="text" id="fone" name="fone" required><br>
-            <button type="submit" name="cadastrar">Cadastrar</button>
-            <a href="index.php">Voltar</a>
+            <input type="text" id="fone" name="fone" value="<?= $dados['telefone']; ?>"  required><br>
+            <button type="submit" name="login">Acessar</button>
         </form>
     </main>
     <?php include_once('rodape.php'); ?>
