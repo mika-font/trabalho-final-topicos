@@ -8,8 +8,6 @@ if($result == TRUE){
 } else {
     echo mysqli_errno($conexao) . ": " . mysqli_error($conexao);
 }
-
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

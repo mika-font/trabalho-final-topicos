@@ -8,7 +8,7 @@
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/css/pacote.css">
     <link rel="shortcut icon" href="#" type="image/x-icon">
-    <title>Cadastrar Usuário</title>
+    <title>Cadastro de Usuário</title>
 </head>
 <body>
 <?php include_once('cabecalho.php'); ?>
