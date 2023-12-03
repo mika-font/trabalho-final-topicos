@@ -1,2 +1,3 @@
+Meu sistema possui um crud de usuário, um crud de instrumento e um crud de pedidos, como posso montar isso no banco de dados? Possui mais alguma outra tabela necessária?
 Faça um sistema de login com senha encriptografada em password_hash e email utilizando php procedural e html
 Interprete meu processamento de usuário e adicione melhorias à segurança e validação
