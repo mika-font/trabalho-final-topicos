@@ -3,7 +3,7 @@ function conectar(){
     $host = "localhost";
     $user = "root";
     $password = "";
-    $banco = "cafeteria";
+    $banco = "storemusic";
 
     $conect = mysqli_connect($host, $user, $password, $banco);
     if ($conect) {

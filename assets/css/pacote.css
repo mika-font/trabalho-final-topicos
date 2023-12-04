@@ -1,6 +1,6 @@
-:root{
---color_white: #ffffff ;
---color_black: #000000 ;
---color_yellow: #ff8400 ;
---color_brown: #572100 ;
+:root {
+    --color-white: #ffffff;
+    --color-black: #000000;
+    --color-yellow: rgb(255, 132, 0);
+    --color-brown: #572100;
 }
