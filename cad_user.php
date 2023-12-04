@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -16,51 +17,52 @@
     <main class="container">
         <div class="row">
             <div class="col-xl-12">
-                <div class="text-center pt-5">
+                <div class="text-center pt-4">
                     <h3>Cadastrar Usuário</h3>
                     <hr>
                 </div>
             </div>
         </div>
-        <form method="POST" action="<?= $_SERVER['PHP_SELF']; ?>">
+        <form method="POST" action="processa_usuario.php">
             <div class="row">
-                <div class="col-xl-6">
+                <div class="col-xl-4">
                     <div class="py-2 mx-3">
                         <label class="form-label">Nome:</label>
                         <input class="form-control" type="text" name="nome" class="input" required>
                     </div>
                 </div>
-                <div class="col-xl-6">
+                <div class="col-xl-4">
                     <div class="py-2 mx-3">
                         <label class="form-label">Email:</label>
                         <input class="form-control" type="email" name="email" class="input" required>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-xl-6">
+                <div class="col-xl-4">
                     <div class="py-2 mx-3">
                         <label class="form-label">Senha:</label>
                         <input class="form-control" type="password" id="senha" name="senha" required>
                     </div>
                 </div>
-                <div class="col-xl-6">
+            </div>
+            <div class="row">
+                <div class="col-xl-4">
                     <div class="py-2 mx-3">
                         <label class="form-label">CPF:</label>
                         <input class="form-control" type="text" placeholder="xxx.xxx.xxx-xx" id="cpf" name="cpf" required>
                     </div>
                 </div>
-            </div>
-            <div class="row">
                 <div class="col-xl-8">
                     <div class="py-2 mx-3">
                         <label class="form-label">Endereço:</label>
                         <input class="form-control" type="text" id="endereco" name="endereco" required>
                     </div>
                 </div>
-                <div class="col-xl-4">
-                    <div class="text-end pt-5 mx-3">
-                        <button class="btn link-body-emphasis " type="submit" name="cadastrar" style="background-color: var(--color-yellow);">Cadastrar</button>
+            </div>
+            <div class="row">
+                <div class="col-xl-12">
+                    <div class="text-end py-2 mx-3">
+                        <button class="btn link-body-emphasis" type="submit" name="cadastrar" style="background-color: var(--color-yellow);">Cadastrar</button>
+                        <a class="btn link-body-emphasis text-light" style="background-color: var(--color-brown);">Voltar</a>
                     </div>
                 </div>
             </div>
@@ -68,7 +70,7 @@
                 <div class="col-xl-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.php">Início</a></li>
+                            <li class="breadcrumb-item"><a href="index.php" class="text-decoration-none">Início</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Cadastrar</li>
                         </ol>
                     </nav>

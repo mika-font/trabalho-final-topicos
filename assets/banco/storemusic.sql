@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Dez-2023 às 01:31
+-- Tempo de geração: 04-Dez-2023 às 05:19
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -76,8 +76,18 @@ CREATE TABLE `usuario` (
   `email` varchar(255) NOT NULL,
   `senha` varchar(255) NOT NULL,
   `cpf` varchar(14) NOT NULL,
-  `endereco` varchar(255) NOT NULL
+  `endereco` varchar(255) NOT NULL,
+  `tipo` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`, `cpf`, `endereco`, `tipo`) VALUES
+(2, 'Admin', 'admin@gmail.com', '$2y$10$91Y5ZDbtRIt8b5az5AUzzeJKxPBLYiTFDJIpRtZKW7qne77DuuqWq', '937.538.100-53', 'Rua Marechal Deodoro 4490 - Casa C', 2),
+(3, 'Mikael Fontoura', 'mikaelfontoura29@gmail.com', '$2y$10$/8akYCMBGjhc2hiCluyNZu/7g.H8/v3xF8Ow/ze0uSuCbeqkamoEe', '879.482.810-53', 'Rua Marechal Deodoro 4490 - Casa C', 1),
+(4, 'Samuel', 'saturno@gmail.com', '$2y$10$Nl8dYOCBCvY9tWxdIa1Dx.3tpM80kZaAhL1uSgBpFiQVRIjGGcPQy', '879.482.810-53', 'Rua Marechal Deodoro 4490 - Casa C', 0);
 
 --
 -- Índices para tabelas despejadas
@@ -136,7 +146,7 @@ ALTER TABLE `pedido`
 -- AUTO_INCREMENT de tabela `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restrições para despejos de tabelas
