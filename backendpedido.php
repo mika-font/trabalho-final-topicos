@@ -18,7 +18,7 @@ try {
 // Função para verificar se o usuário está autenticado
 function verificarAutenticacao() {
     if (!isset($_SESSION['usuario_id'])) {
-        header('Location: login.php');
+        header('Location: logout.php');
         exit();
     }
 }
