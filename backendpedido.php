@@ -3,9 +3,9 @@ session_start();
 
 // Configuração do banco de dados (substitua pelos seus próprios dados)
 $host = 'localhost';
-$dbname = 'seu_banco_de_dados';
-$username = 'seu_usuario';
-$password = 'sua_senha';
+$dbname = 'storemusic';
+$user = 'root';
+$password = '';
 
 // Conexão com o banco de dados
 try {
