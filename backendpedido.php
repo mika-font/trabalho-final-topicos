@@ -5,7 +5,7 @@ session_start();
 $host = 'localhost';
 $dbname = 'storemusic';
 $user = 'root';
-$password = '12345678';
+$password = '';
 
 // Conexão com o banco de dados
 try {
