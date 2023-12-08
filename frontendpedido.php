@@ -1,3 +1,22 @@
+<?php
+// Inicia a sessão
+session_start();
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Sua Página</title>
+</head>
+<body>
+
+<!-- Conteúdo HTML da sua página -->
+
+</body>
+</html>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
