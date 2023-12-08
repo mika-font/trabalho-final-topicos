@@ -4,6 +4,8 @@ if (isset($_POST['acessar']) && !empty($_POST['email']) && !empty($_POST['senha'
     $conexao = conectar();
     session_start();
 
+    
+
     $email = mysqli_escape_string($conexao, $_POST['email']);
     $senha = mysqli_escape_string($conexao, $_POST['senha']);
 
@@ -101,6 +103,7 @@ if (isset($_POST['acessar']) && !empty($_POST['email']) && !empty($_POST['senha'
             </div>
         </div>
     </main>
+    
     <?php include_once('rodape.php'); ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
