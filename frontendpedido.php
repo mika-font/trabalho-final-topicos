@@ -48,5 +48,6 @@ include 'cabecalho.php';
 // Funções de manipulação DOM e AJAX aqui
 </script>
 
+    
 </body>
 </html>
