@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 04-Dez-2023 às 05:19
+-- Tempo de geração: 08-Dez-2023 às 02:12
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -28,14 +28,20 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `instrumento` (
-  `id_instrumento` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `nome` varchar(255) NOT NULL,
   `marca` varchar(255) NOT NULL,
-  `valor` decimal(10,2) NOT NULL,
-  `imagem` varchar(255) NOT NULL,
-  `descricao` text NOT NULL,
-  `categoria` varchar(255) NOT NULL
+  `valor` varchar(14) NOT NULL,
+  `categoria` varchar(255) NOT NULL,
+  `descricao` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `instrumento`
+--
+
+INSERT INTO `instrumento` (`id`, `nome`, `marca`, `valor`, `categoria`, `descricao`) VALUES
+(1, 'Violino', 'Mix', '40,03', 'Corda', 'Violino de teste');
 
 -- --------------------------------------------------------
 
@@ -97,7 +103,7 @@ INSERT INTO `usuario` (`id_usuario`, `nome`, `email`, `senha`, `cpf`, `endereco`
 -- Índices para tabela `instrumento`
 --
 ALTER TABLE `instrumento`
-  ADD PRIMARY KEY (`id_instrumento`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Índices para tabela `item_pedido`
@@ -128,7 +134,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de tabela `instrumento`
 --
 ALTER TABLE `instrumento`
-  MODIFY `id_instrumento` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `item_pedido`
@@ -156,7 +162,7 @@ ALTER TABLE `usuario`
 -- Limitadores para a tabela `item_pedido`
 --
 ALTER TABLE `item_pedido`
-  ADD CONSTRAINT `item_pedido_ibfk_1` FOREIGN KEY (`id_instrumento`) REFERENCES `instrumento` (`id_instrumento`),
+  ADD CONSTRAINT `item_pedido_ibfk_1` FOREIGN KEY (`id_instrumento`) REFERENCES `instrumento` (`id`),
   ADD CONSTRAINT `item_pedido_ibfk_2` FOREIGN KEY (`id_pedido`) REFERENCES `pedido` (`id_pedido`);
 
 --
